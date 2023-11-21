@@ -16,6 +16,12 @@ public class Classificacao implements Serializable {
     @Column(name = "DESCRICAO")
     private String descricao;
 
+<<<<<<< HEAD
+=======
+    @OneToMany(mappedBy = "classificacao")
+    private List<Produto> produtos;
+
+>>>>>>> c8f8bed (Commit 21/11/2023_TDE2011)
     public Classificacao() {
     }
 
@@ -34,4 +40,8 @@ public class Classificacao implements Serializable {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> c8f8bed (Commit 21/11/2023_TDE2011)
 }

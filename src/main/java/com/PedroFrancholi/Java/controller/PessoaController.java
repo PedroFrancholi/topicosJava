@@ -18,7 +18,6 @@ import java.util.Optional;
 public class PessoaController {
     @Autowired
     private PessoaService service;
-    private VeiculoService serviceVeiculo;
 
     @PostMapping
     public ResponseEntity<Object> gravarPessoa(@RequestBody Pessoa pessoa){
