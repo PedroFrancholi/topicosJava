@@ -1,13 +1,13 @@
 package com.PedroFrancholi.Java.modelo;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import org.hibernate.annotations.Cascade;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
+@Table(name = "Pessoa")
 public class Pessoa implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,8 +16,9 @@ public class Pessoa implements Serializable {
     private String cpf;
     private String sexo;
 
-    public Pessoa() {
-    }
+    @OneToMany(mappedBy = "pessoa")
+    @Cascade(org.hibernate.annotations.CascadeType.ALL)
+    private List<Veiculo> veiculos;
 
     public Long getId() {
         return id;
@@ -49,5 +50,13 @@ public class Pessoa implements Serializable {
 
     public void setSexo(String sexo) {
         this.sexo = sexo;
+    }
+
+    public List<Veiculo> getVeiculos() {
+        return veiculos;
+    }
+
+    public void setVeiculos(List<Veiculo> veiculos) {
+        this.veiculos = veiculos;
     }
 }
