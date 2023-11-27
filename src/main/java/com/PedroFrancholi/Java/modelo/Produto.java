@@ -9,8 +9,8 @@ import java.math.BigDecimal;
 @Table(name = "Produto")
 public class Produto implements Serializable {
     @Id
-    @Column(name = "ID")
-    private Integer id;
+    @Column(name = "CODIGO")
+    private Integer codigo;
 
     @Column(name = "DESCRICAO")
     private String descricao;
@@ -33,12 +33,13 @@ public class Produto implements Serializable {
     public Produto() {
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getCodigo() {
+
+        return codigo;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setCodigo(Integer codigo) {
+        this.codigo = codigo;
     }
 
     public String getDescricao() {
